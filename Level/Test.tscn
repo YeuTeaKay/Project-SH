@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfk7djllkdfwj"]
+
+[ext_resource type="Texture2D" uid="uid://bx77lxp08kim2" path="res://Dirt.png" id="1_a5r53"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xpcpg"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="3_ucclk"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="4_twk3g"]
+
+[sub_resource type="Environment" id="Environment_jv3g7"]
+fog_light_energy = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_anisotropy = 0.65
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7qka"]
+albedo_texture = ExtResource("1_a5r53")
+uv1_scale = Vector3(3.5, 3.5, 3.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.129408
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88v7t"]
+next_pass = SubResource("StandardMaterial3D_b7qka")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vq7dx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ci8iw"]
+height = 1.2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jv3g7")
+
+[node name="DirectionalLight3eeD" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.27392, 0.0074108, 0.961724, -0.418292, 0.901357, 0.112193, 0, 33.6903, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(41.7546, 0, 0, 0, 0.997325, 0, 0, 0, 41.7546, -0.209579, 0.0885525, 0.0556107)
+use_collision = true
+material = SubResource("StandardMaterial3D_88v7t")
+
+[node name="Player2" type="CharacterBody3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 3.32336, 0)
+script = ExtResource("1_xpcpg")
+
+[node name="Standing_Collision" type="CollisionShape3D" parent="Player2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_vq7dx")
+
+[node name="Crouch_Collision" type="CollisionShape3D" parent="Player2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.81053, 0)
+shape = SubResource("CapsuleShape3D_ci8iw")
+
+[node name="Head" type="Node3D" parent="Player2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, 4.2, -0.706)
+
+[node name="Eyes" type="Node3D" parent="Player2/Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Player2/Head/Eyes"]
+
+[node name="IsObjectAbove" type="RayCast3D" parent="Player2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 2.365, 0, -1, 0, -4.37114e-08, 0, 2.64273, 0)
+target_position = Vector3(0, 1, 0)
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("3_ucclk")
+file_management/garden_work_directory = "res://"
+gardening/gardening_collision_mask = 1.0
+plugin_version = "1.3.1"
+storage_version = 3
+metadata/class = "Gardener"
+
+[node name="Arborist" type="Node3D" parent="Gardener"]
+script = ExtResource("4_twk3g")
+octree_managers = []
+metadata/class = "Arborist"
+
+[node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]

@@ -1,0 +1,59 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dkxahkx8vg5s3"]
+
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed_brush.gd" id="1_xrd16"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed.gd" id="2_cm0kf"]
+
+[sub_resource type="Resource" id="Resource_tm4fy"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_xrd16")
+behavior/behavior_brush_type = 0
+shape/shape_volume_size = 10.0
+shape/shape_projection_size = 1.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_bpja0"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_xrd16")
+behavior/behavior_brush_type = 1
+shape/shape_volume_size = 10.0
+shape/shape_projection_size = 100.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_52je1"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_xrd16")
+behavior/behavior_brush_type = 2
+shape/shape_volume_size = 1.0
+shape/shape_projection_size = 1.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_4xtpi"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_xrd16")
+behavior/behavior_brush_type = 3
+shape/shape_volume_size = 10.0
+shape/shape_projection_size = 100.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+metadata/class = "Toolshed_Brush"
+
+[resource]
+resource_name = "Toolshed"
+script = ExtResource("2_cm0kf")
+brush/brushes = [SubResource("Resource_tm4fy"), SubResource("Resource_bpja0"), SubResource("Resource_52je1"), SubResource("Resource_4xtpi")]
+brush/active_brush = SubResource("Resource_tm4fy")
+metadata/class = "Toolshed"
