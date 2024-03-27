@@ -1,2 +1,13 @@
 res://Level/Test.tscn
 res://toolshed.tres
+res://Player.tscn
+res://PlayerTest.tscn
+res://Scripts/Player.gd
+res://Enemy.tscn
+res://EnemyAI.gd
+res://Prefab/Enemy.tscn
+res://AI/States/State.gd
+res://Prefab/PlayerTest.tscn
+res://Prefab/State Machine.gd
+res://AI/States/EnemyWander.gd
+res://AI/EnemyAI.gd

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5o3wcddy1f8u"]
+
+[ext_resource type="Script" path="res://AI/EnemyAI.gd" id="1_qnxmp"]
+[ext_resource type="Script" path="res://Prefab/State Machine.gd" id="2_rhgy8"]
+[ext_resource type="Script" path="res://AI/States/EnemyWander.gd" id="3_qm1vn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3jfun"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kisfd"]
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3814, 6.02205, 0.0285459)
+script = ExtResource("1_qnxmp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.565, 0, 0, 0, 3.565, 0, 0, 0, 3.565, 20.7941, -0.622913, -49.8343)
+shape = SubResource("CapsuleShape3D_3jfun")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_kisfd")
+skeleton = NodePath("../..")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_rhgy8")
+initial_state = NodePath("Wander")
+
+[node name="Wander" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_qm1vn")
+enemy = NodePath("../..")
