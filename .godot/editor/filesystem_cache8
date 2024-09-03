@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711434269
+::res://::1725337509
 icon.svg::CompressedTexture2D::3552256878555849351::1709041324::1711461589::1::::<><>::
 README.md::TextFile::-1::1709649200::0::1::::<><>::
+weapons.gd::GDScript::-1::1725337509::0::1::::Weapons<>Resource<>::
 ::res://addons/::1709649967
 ::res://addons/dreadpon.spatial_gardener/::1709649967
 plugin.cfg::TextFile::-1::1708791429::0::1::::<><>::
@@ -123,19 +124,19 @@ pa_prop_set.gd::GDScript::-1::1708791429::0::1::::<><>::
 prop_action.gd::GDScript::-1::1708791429::0::1::::<>RefCounted<>::
 ::res://AI/::1711458393
 EnemyAI.gd::GDScript::-1::1711458393::0::1::::RatEnemy<>CharacterBody3D<>::
-::res://AI/States/::1711458521
-EnemyWander.gd::GDScript::-1::1711457630::0::1::::EnemyWander<>State<>::
+::res://AI/States/::1724488483
+EnemyWander.gd::GDScript::-1::1724488483::0::1::::EnemyWander<>State<>::
 State.gd::GDScript::-1::1711458521::0::1::::State<>Node<>::
-::res://Level/::1711458782
+::res://Level/::1725267819
 Dirt.png::CompressedTexture2D::4068787995388746387::1709044475::1711434215::1::::<><>::
-Test.tscn::PackedScene::2759957470790379617::1711458782::0::1::::<><>::uid://bx77lxp08kim2::::res://Level/Dirt.png<>uid://co6e7ikqgvtjv::::res://Prefab/PlayerTest.tscn
+Test.tscn::PackedScene::2759957470790379617::1725338074::0::1::::<><>::uid://bx77lxp08kim2::::res://Level/Dirt.png<>uid://co6e7ikqgvtjv::::res://Prefab/PlayerTest.tscn
 ::res://Misc/::1711434269
 greenhouse.tres::Resource::8925539319047429847::1709052373::0::1::::<><>::res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd
 toolshed.tres::Resource::7908644238652042328::1711430831::0::1::::<><>::res://addons/dreadpon.spatial_gardener/toolshed/toolshed_brush.gd<>res://addons/dreadpon.spatial_gardener/toolshed/toolshed.gd
-::res://Prefab/::1711458782
-Enemy.tscn::PackedScene::4522726754504798842::1711458782::0::1::::<><>::res://AI/EnemyAI.gd<>res://Prefab/State Machine.gd<>res://AI/States/EnemyWander.gd
+::res://Prefab/::1725337509
+Enemy.tscn::PackedScene::4522726754504798842::1725267737::0::1::::<><>::res://AI/EnemyAI.gd<>res://Prefab/State Machine.gd<>res://AI/States/EnemyWander.gd
 Player.gltf::PackedScene::224255979227875060::1709042839::1709042935::1::::<><>::
-PlayerTest.tscn::PackedScene::5819781338441208859::1711458782::0::1::::<><>::res://Scripts/Player.gd
+PlayerTest.tscn::PackedScene::5819781338441208859::1725338089::0::1::::<><>::res://Scripts/Player.gd<>res://weapons.gd
 State Machine.gd::GDScript::-1::1711458021::0::1::::<>Node<>::
-::res://Scripts/::1711433156
-Player.gd::GDScript::-1::1711433156::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1725337450
+Player.gd::GDScript::-1::1725338074::0::1::::<>CharacterBody3D<>::

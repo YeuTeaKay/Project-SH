@@ -33,4 +33,3 @@ func Update(delta):
 func random_wander():
 	# Randomize the movement direction
 	move_direction = Vector3(randf_range(-1.0, 1.0), 0, randf_range(-1.0, 1.0)).normalized()
-
